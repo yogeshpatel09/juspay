@@ -5,13 +5,13 @@ import { FaClockRotateLeft, FaRegStar } from 'react-icons/fa6'
 import { VscBell } from 'react-icons/vsc'
 import { MdOutlineViewSidebar } from 'react-icons/md'
 
-function Header() {
+function Header({ onToggleLeft, onToggleRight }) {
     return (
         <div>
             <div className="h-16 border-b  border-[rgba(28,28,28,0.1)] dark:border-[rgba(255,255,255,0.1)] px-7 py-5 flex justify-between">
                 <div className="flex w-full dark:text-white">
 
-                    <div className='px-2 py-1'><MdOutlineViewSidebar /></div>
+                    <div onClick={() => onToggleLeft && onToggleLeft()} className='px-2 py-1'><MdOutlineViewSidebar /></div>
                     <div className='px-2 py-1'><FaRegStar /></div>
                     <div className='px-2 py-1 dark:text-[rgba(255,255,255,0.4)]'>Dashboards</div>
                     <div className='px-2 py-1 dark:text-[rgba(255,255,255,0.4)]'>/</div>
@@ -40,7 +40,7 @@ function Header() {
                     <div className='px-2 py-1'>
                         <VscBell />
                     </div>
-                    <div className='px-2 py-1'>
+                    <div onClick={() => onToggleRight && onToggleRight()} className='px-2 py-1'>
                         <MdOutlineViewSidebar />
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-// src/data/sidebarData.js
+
 import { PiChartPieSlice } from "react-icons/pi";
 import { MdOutlineShoppingCart, MdWork } from "react-icons/md";
 import { RiBookOpenLine, RiUser3Line,RiFolder6Line } from "react-icons/ri";
@@ -13,7 +13,7 @@ const sidebarData = {
   dashboards: [
     {
       title: "Default",
-      icon: PiChartPieSlice,   // yaha string ki jagah direct component reference
+      icon: PiChartPieSlice,
       path: "/dashboard/default",
     },
     { title: "eCommerce", icon: PiShoppingBagOpen, path: "/dashboard/ecommerce" },
