@@ -5,17 +5,18 @@ import { FaClockRotateLeft, FaRegStar } from 'react-icons/fa6'
 import { VscBell } from 'react-icons/vsc'
 import { MdOutlineViewSidebar } from 'react-icons/md'
 
-function Header({ onToggleLeft, onToggleRight }) {
+function Header({ onToggleLeft, onToggleRight,pageTitle }) {
+    
     return (
         <div>
-            <div className="h-16 border-b  border-[rgba(28,28,28,0.1)] dark:border-[rgba(255,255,255,0.1)] px-7 py-5 flex justify-between">
+            <div className="h-16 border-b  w-full border-[rgba(28,28,28,0.1)] dark:border-[rgba(255,255,255,0.1)] px-7 py-5 flex justify-between">
                 <div className="flex w-full dark:text-white">
 
                     <div onClick={() => onToggleLeft && onToggleLeft()} className='px-2 py-1'><MdOutlineViewSidebar /></div>
                     <div className='px-2 py-1'><FaRegStar /></div>
                     <div className='px-2 py-1 dark:text-[rgba(255,255,255,0.4)]'>Dashboards</div>
                     <div className='px-2 py-1 dark:text-[rgba(255,255,255,0.4)]'>/</div>
-                    <div className='px-2 py-1 dark:text-white'>Default</div>
+                    <div className='px-2 py-1 dark:text-white'>{pageTitle || "Default"}</div>
 
                 </div>
                 <div className="flex items-center dark:text-white">
@@ -25,7 +26,7 @@ function Header({ onToggleLeft, onToggleRight }) {
                         </div>
                         <input type="search"
                             placeholder='Search '
-                            className='bg-[rgba(255,255,255,0.1)] rounded-full pl-7 h-7 text-xs py-0.5  w-[160px] outline-none '
+                            className='dark:bg-[rgba(255,255,255,0.1)] bg-[rgba(28,28,28,0.05)] rounded-full pl-7 h-7 text-xs py-0.5  w-[160px] outline-none '
                         />
                         <div className="relative -top-7  -right-32 dark:text-[rgba(255, 255, 255, 0.2)] w-7">
                             ⌘/

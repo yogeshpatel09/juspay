@@ -17,7 +17,7 @@ const sidebarData = {
       path: "/dashboard/default",
     },
     { title: "eCommerce", icon: PiShoppingBagOpen, path: "/dashboard/ecommerce" },
-    { title: "Projects", icon: RiFolder6Line, path: "/dashboard/projects" },
+    { title: "Projects", icon: RiFolder6Line, path: "/dashboard/project" },
     {
       title: "Online Courses",
       icon: FaBookOpen,
@@ -31,16 +31,16 @@ const sidebarData = {
       path: "/profile",
       children: [
         { title: "Overview", path: "/profile/overview" },
-        { title: "Projects", path: "/profile/projects" },
+        { title: "Projects", path: "/profile/project" },
         { title: "Campaigns", path: "/profile/campaigns" },
         { title: "Documents", path: "/profile/documents" },
         { title: "Followers", path: "/profile/followers" },
       ],
     },
-    { title: "Account", icon: PiIdentificationCard, path: "/account" },
-    { title: "Corporate", icon: PiUsersThree, path: "/corporate" },
-    { title: "Blog", icon: PiNotebook, path: "/blog" },
-    { title: "Social", icon: PiChatsTeardropBold, path: "/social" },
+    { title: "Account", icon: PiIdentificationCard, path: "/page/account" },
+    { title: "Corporate", icon: PiUsersThree, path: "/page/corporate" },
+    { title: "Blog", icon: PiNotebook, path: "/page/blog" },
+    { title: "Social", icon: PiChatsTeardropBold, path: "/page/social" },
   ],
 };
 

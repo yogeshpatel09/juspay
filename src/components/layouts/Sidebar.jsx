@@ -2,12 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import sidebarData from "../../data/SidebarData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PiChartPieSlice } from "react-icons/pi";
 
-export default function Sidebar({ collapsed = false }) {
+export default function Sidebar({ collapsed = false, onSelect }) {
     const [openMenus, setOpenMenus] = useState({});
-
+    const [activeItem, setActiveItem] = useState("");
+    const navigate = useNavigate();
     const toggleMenu = (title) => {
         setOpenMenus((prev) => ({ ...prev, [title]: !prev[title] }));
     };
@@ -15,11 +16,25 @@ export default function Sidebar({ collapsed = false }) {
         return (
             <ul className={`pl-${level * 2}`}>
                 {items.map((item, i) => (
-                    <li key={i} className="my-1">
+                    <li key={i} className="my-1 relative">
                         <button
-                            onClick={() => toggleMenu(item.title)}
-                            className="flex items-center gap-1 w-full text-sm text-[#1C1C1C] dark:border-[rgba(28,28,28,0.1)] px-2 py-1 hover:bg-[rgba(28, 28, 28, 0.05)]"
+                            onClick={() => {
+                                if (item.children) {
+                                    toggleMenu(item.title);
+                                    setActiveItem(item.title);
+                                    onSelect?.(item.title);
+                                } else {
+                                    setActiveItem(item.title);
+                                    onSelect?.(item.title);
+                                    if (item.path) navigate(item.path);
+                                }
+                            }}
+                            className={`flex items-center gap-1 w-full text-sm text-[#1C1C1C] dark:border-[rgba(28,28,28,0.1)] px-2 py-1 rounded-lg ${activeItem === item.title
+                                ? 'bg-[rgba(28,28,28,0.05)] dark:bg-[rgba(255,255,255,0.1)]'
+                                : 'hover:bg-[rgba(28,28,28,0.05)] hover:dark:bg-[rgba(255,255,255,0.1)]'
+                                }`}
                         >
+                            <div className={`left-1 absolute h-5 rounded-full w-1.5 bg-[#1C1C1C] dark:bg-[#C6C7F8] ${activeItem === item.title ? 'block' : 'hidden hover:block'}`}></div>
                             <div className="h-6 w-6 flex justify-center items-center dark:text-white  text-[rgba(28, 28, 28, 0.2)]">
                                 {level === 0 && (
                                     <div className="">
@@ -59,7 +74,7 @@ export default function Sidebar({ collapsed = false }) {
             </div>
             <nav className="">
                 <div className="text-sm  mt-4 mb-2 flex gap-2 items-start">
-                    <span className=" text-[rgba(28,28,28,0.2)] hover:text-[rgba(28,28,28,0.4)] dark:text-white cursor-pointer px-2 py-1">Favorites</span>
+                    <span className="  text-[rgba(28,28,28,0.4)] dark:text-white cursor-pointer px-2 py-1">Favorites</span>
                     <span className=" text-[rgba(28,28,28,0.2)] hover:text-[rgba(28,28,28,0.4)] dark:text-white cursor-pointer px-2 py-1">Recently</span>
                 </div>
                 <div className="space-y-1 px-2">
