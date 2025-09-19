@@ -9,7 +9,7 @@ function Home() {
         <div className="p-1 text-black dark:text-white font-semibold text-sm">
           eCommerce
         </div>
-        <div className="border w-full h-full flex flex-wrap">
+        <div className=" w-full h-full flex flex-wrap">
           <div className="w-1/2 flex gap-2">
             <div className="grid grid-cols-2 gap-x-4 w-1/2">
                 <StatCard/>
