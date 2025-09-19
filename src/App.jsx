@@ -5,7 +5,6 @@ import Header from "./components/layouts/Header";
 import Aside from "./components/layouts/Aside";
 import Home from "./(pages)/Home";
 import Default from "./(pages)/dashboard/Default";
-import Ecommerce from "./(pages)/dashboard/ecommerce";
 import Project from "./(pages)/dashboard/Project";
 import OnlineCourses from "./(pages)/dashboard/OnlineCourses";
 import Account from "./(pages)/page/Account";
@@ -18,6 +17,7 @@ import Followers from "./(pages)/page/profile/followers";
 import Overview from "./(pages)/page/profile/Overview";
 import ProjectProfile from "./(pages)/page/profile/Project";
 import Campaigns from "./(pages)/page/profile/Campaigns";
+import Ecommerce from "./(pages)/dashboard/Ecommerce";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
