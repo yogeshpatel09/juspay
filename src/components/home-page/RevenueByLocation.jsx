@@ -10,7 +10,7 @@ export default function RevenueByLocation() {
 
   return (
     <div className="bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] rounded-2xl shadow p-6 w-[202px] h-[318px] flex flex-col">
-      <h2 className="text-gray-800 font-medium mb-3">Revenue by Location</h2>
+      <h2 className="dark:text-white font-medium mb-3">Revenue by Location</h2>
 
       {/* Map container */}
       <div className="relative w-full h-24 mb-4">
@@ -28,14 +28,14 @@ export default function RevenueByLocation() {
         {data.map((item, i) => (
           <div key={i} className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
-              <span className="text-gray-700">{item.city}</span>
-              <span className="text-gray-800 font-medium">{item.value}</span>
+              <span className="dark:text-white">{item.city}</span>
+              <span className="dark:text-white">{item.value}</span>
             </div>
 
             {/* Progress bar container */}
-            <div className="w-full h-1 bg-gray-200 rounded-full">
+            <div className="w-full h-1 bg-[rgba(255,255,255,0.4)] dark:bg-[rgba(28,28,28,0.4)] rounded-full">
               <div
-                className="h-1 bg-black rounded-full"
+                className="h-1 bg-[rgba(168,197,218,1)]  rounded-full"
                 style={{ width: `${item.percent}%` }} // highlight according to percent
               ></div>
             </div>

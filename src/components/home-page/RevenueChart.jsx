@@ -20,21 +20,21 @@ const data = [
 ];
 
 export default function RevenueChart() {
-    
+
   return (
-    <div className="w-full h-[318px]  pb-10 pt-6 pr-7 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
-      
+    <div className="w-full h-[318px]  pb-16 pt-6 pr-7 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
+
 
       {/* Custom Legend */}
-      <div className="flex items-center gap-4 mb-2 pl-7  text-sm">
-        <h2 className="text-sm font-semibold ">Revenue</h2>
-        <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-black"></span>
-          Current Week <span className="font-semibold">$58,211</span>
+      <div className="flex items-center gap-4 mb-2 pb-4 pl-7  text-sm">
+        <h2 className="text-sm font-semibold dark:text-white">Revenue</h2>
+        <span className="flex items-center gap-1 dark:text-white">
+          <span className="w-2 h-2 rounded-full bg-[rgba(168,197,218,1)]"></span>
+          Current Week <span className="font-semibold dark:text-white">$58,211</span>
         </span>
-        <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-blue-300"></span>
-          Previous Week <span className="font-semibold">$68,768</span>
+        <span className="flex items-center gap-1 dark:text-white">
+          <span className="w-2 h-2 rounded-full bg-[rgba(168,197,218,1)]"></span>
+          Previous Week <span className="font-semibold dark:text-white">$68,768</span>
         </span>
       </div>
 

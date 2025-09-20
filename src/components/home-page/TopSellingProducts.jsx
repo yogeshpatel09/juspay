@@ -15,17 +15,17 @@ export default function TopSellingProducts() {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className=" text-[rgba(28,28,28,0.4)] dark:text-[rgba(255,255,255,0.4)] text-left">
-              <th className="py-2 px-4">Name</th>
-              <th className="py-2 px-4">Price</th>
-              <th className="py-2 px-4">Quantity</th>
-              <th className="py-2 px-4">Amount</th>
+            <tr className="border-b text-[rgba(28,28,28,0.4)] dark:text-[rgba(255,255,255,0.4)] text-left">
+              <th className="py-2 px-4 font-normal">Name</th>
+              <th className="py-2 px-4 font-normal">Price</th>
+              <th className="py-2 px-4 font-normal">Quantity</th>
+              <th className="py-2 px-4 font-normal">Amount</th>
             </tr>
           </thead>
           <tbody>
             {products.map((p, i) => (
-              <tr key={i} className=" dark:text-white ">
-                <td className="py-2 px-4">{p.name}</td>
+              <tr key={i} className=" dark:text-white fonor">
+                <td className="py-2 px-4 fono">{p.name}</td>
                 <td className="py-2 px-4">${p.price.toFixed(2)}</td>
                 <td className="py-2 px-4">{p.quantity}</td>
                 <td className="py-2 px-4">${p.amount.toLocaleString()}</td>

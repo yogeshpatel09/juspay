@@ -29,11 +29,11 @@ function Home() {
           <RevenueByLocation />
         </div>
       </div>
-      <div className="w-full flex items-center gap-7 pb-24 justify-between">
-        <div className="w-full">
+      <div className="w-full flex items-center gap-7 h-full pb-24 justify-between">
+        <div className="w-full h-full">
            <TopSellingProducts />
         </div>
-        <div className="">
+        <div className="h-full">
            <TotalSalesChart />
         </div>
       </div>

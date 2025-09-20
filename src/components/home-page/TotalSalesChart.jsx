@@ -2,10 +2,10 @@
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const data = [
-    { name: "Direct", value: 300.56, color: "#000000" },
-    { name: "Affiliate", value: 135.18, color: "#A0E7B3" },
-    { name: "Sponsored", value: 154.02, color: "#9CA9FF" },
-    { name: "E-mail", value: 48.96, color: "#89E0F0" },
+    { name: "Direct", value: 300.56, color: "#1c1c1c" },
+    { name: "Affiliate", value: 135.18, color: "#BAEDBD" },
+    { name: "Sponsored", value: 154.02, color: "#95A4FC" },
+    { name: "E-mail", value: 48.96, color: "#B1E3FF" },
 ];
 
 export default function TotalSalesChart() {
@@ -13,8 +13,8 @@ export default function TotalSalesChart() {
     const percent = ((data[0].value / total) * 100).toFixed(1); // direct ka %
 
     return (
-        <div className="bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] rounded-2xl shadow p-6 w-[202px] ">
-            <h2 className="text-gray-800 font-medium mb-4">Total Sales</h2>
+        <div className="bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] rounded-2xl shadow p-6 w-[202px] ">
+            <h2 className="dark:text-white font-semibold mb-4">Total Sales</h2>
             <div className="flex flex-col items-center">
                 <PieChart width={140} height={140}>
                     <Pie
@@ -23,20 +23,17 @@ export default function TotalSalesChart() {
                         innerRadius={50}
                         outerRadius={70}
                         stroke="none"
-                        paddingAngle={5}   // 👈 yeh add karna hai
-                        cornerRadius={8} 
+                        paddingAngle={5}
+                        cornerRadius={9}
+                        
                     >
                         {data.map((entry, index) => (
                             <Cell key={index} fill={entry.color} />
                         ))}
                     </Pie>
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} />
                 </PieChart>
-                <div className="absolute mt-[-120px]">
-                    <span className="bg-gray-800 text-white text-start text-xs px-2 py-1 rounded">
-                        {percent}%
-                    </span>
-                </div>
+
             </div>
 
             <div className="mt-6 space-y-2">
@@ -47,9 +44,9 @@ export default function TotalSalesChart() {
                                 className="w-3 h-3 rounded-full"
                                 style={{ backgroundColor: item.color }}
                             />
-                            <span className="text-gray-600">{item.name}</span>
+                            <span className="dark:text-white">{item.name}</span>
                         </div>
-                        <span className="text-gray-800 font-medium">
+                        <span className="dark:text-white">
                             ${item.value.toFixed(2)}
                         </span>
                     </div>
@@ -58,3 +55,19 @@ export default function TotalSalesChart() {
         </div>
     );
 }
+
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        const data = payload[0].payload;
+        return (
+            <div className="bg-[rgba(28,28,28,0.8)] dark:bg-[rgba(28,28,28,0.8)] rounded-lg p-2 shadow-lg text-xs">
+                <div className="text-white ">${data.value.toFixed(2)}</div>
+            </div>
+        );
+    }
+    return null;
+};
+
+
+
+

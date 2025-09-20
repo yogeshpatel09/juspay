@@ -28,7 +28,7 @@ export default function ProjectionChart() {
 
     return (
         <div className="w-full h-[252px] pr-8 pb-10 pt-6 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
-            <h2 className="text-sm font-semibold mb-4 pl-7">Projections vs Actuals</h2>
+            <h2 className="text-sm font-semibold mb-4 pl-7  dark:text-white">Projections vs Actuals</h2>
 
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data} barSize={20}>

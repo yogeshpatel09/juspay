@@ -1,7 +1,7 @@
 
 import React from "react";
 import AsideItem from "./AsideItem";
-import { AsideData } from "../../data/asideData";
+import { AsideData } from "../../data/AsideData";
 
 export default function Aside({ hidden = false }) {
   return (
