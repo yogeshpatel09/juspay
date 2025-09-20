@@ -17,7 +17,7 @@ import Followers from "./(pages)/page/profile/followers";
 import Overview from "./(pages)/page/profile/Overview";
 import ProjectProfile from "./(pages)/page/profile/Project";
 import Campaigns from "./(pages)/page/profile/Campaigns";
-import Ecommerce from "./(pages)/dashboard/Ecommerce";
+import Ecommerce from "./(pages)/dashboard/ecommerce";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
