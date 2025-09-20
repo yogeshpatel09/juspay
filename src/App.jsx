@@ -18,6 +18,7 @@ import Overview from "./(pages)/page/profile/Overview";
 import ProjectProfile from "./(pages)/page/profile/Project";
 import Campaigns from "./(pages)/page/profile/Campaigns";
 import Ecommerce from "./(pages)/dashboard/Ecommerce";
+import OrdersPage from "./(pages)/Order-list";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -28,14 +29,14 @@ export default function App() {
   const [currentPageTitle, setCurrentPageTitle] = useState("Default");
   return (
     <Router>
-      <div className="flex w-full dark:bg-[#1c1c1c] h-screen scrollbar-hide">   
+      <div className="flex w-full dark:bg-[#1c1c1c] h-screen overflow-y-hidden scrollbar-hide">   
         <div className={`flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${isSidebarOpen ? "w-[212px]" : "w-0"}`}>
           <Sidebar collapsed={!isSidebarOpen} onSelect={(title) => setCurrentPageTitle(title)}/>
         </div>
-        <div className="flex-1 overflow-y-auto scrollbar-hide w-full">
+        <div className="flex-1 overflow-y-hidden h-screen w-full">
           <Header onToggleLeft={toggleSidebar} onToggleRight={toggleAside} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<OrdersPage />} />
             <Route path="/dashboard/default" element={<Default/>} />
             <Route path="/dashboard/ecommerce" element={<Ecommerce/>} />
             <Route path="/dashboard/online-courses" element={<OnlineCourses/>} />
@@ -53,7 +54,7 @@ export default function App() {
             
           </Routes>
         </div>
-        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${isAsideOpen ? "w-64" : "w-0"}`}>
+        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out h-screen sc overflow-y-auto scrollbar-hide ${isAsideOpen ? "w-[280px]" : "w-0"}`}>
           <Aside hidden={!isAsideOpen} />
         </div>
       </div>

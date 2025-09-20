@@ -9,7 +9,7 @@ export default function RevenueByLocation() {
   ];
 
   return (
-    <div className="bg-gray-50 rounded-2xl shadow p-6 w-[202px] h-[318px] flex flex-col">
+    <div className="bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] rounded-2xl shadow p-6 w-[202px] h-[318px] flex flex-col">
       <h2 className="text-gray-800 font-medium mb-3">Revenue by Location</h2>
 
       {/* Map container */}

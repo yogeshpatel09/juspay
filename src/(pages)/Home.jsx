@@ -8,8 +8,8 @@ import TopSellingProducts from '../components/home-page/TopSellingProducts'
 
 function Home() {
   return (
-    <div>
-      <div className="p-7 flex flex-col gap-7 overflow-y-auto scrollbar-hide">
+    <div >
+      <div className="p-7  flex flex-col gap-7 h-screen overflow-y-auto scrollbar-hide">
         <div className="p-1 text-black dark:text-white font-semibold text-sm">
           eCommerce
         </div>
@@ -29,7 +29,7 @@ function Home() {
           <RevenueByLocation />
         </div>
       </div>
-      <div className="w-full flex items-center gap-7 justify-between">
+      <div className="w-full flex items-center gap-7 pb-24 justify-between">
         <div className="w-full">
            <TopSellingProducts />
         </div>

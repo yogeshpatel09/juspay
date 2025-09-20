@@ -13,7 +13,7 @@ export default function TotalSalesChart() {
     const percent = ((data[0].value / total) * 100).toFixed(1); // direct ka %
 
     return (
-        <div className="bg-gray-50 rounded-2xl shadow p-6 w-[202px] ">
+        <div className="bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] rounded-2xl shadow p-6 w-[202px] ">
             <h2 className="text-gray-800 font-medium mb-4">Total Sales</h2>
             <div className="flex flex-col items-center">
                 <PieChart width={140} height={140}>

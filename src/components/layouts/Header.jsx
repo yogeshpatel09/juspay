@@ -24,8 +24,8 @@ function Header({ onToggleLeft, onToggleRight,pageTitle }) {
                         <div className="absolute top-2.5 left-4">
                             <CiSearch />
                         </div>
-                        <input type="search"
-                            placeholder='Search '
+                        <input type="text"
+                            placeholder='Search'
                             className='dark:bg-[rgba(255,255,255,0.1)] bg-[rgba(28,28,28,0.05)] rounded-full pl-7 h-7 text-xs py-0.5  w-[160px] outline-none '
                         />
                         <div className="relative -top-7  -right-32 dark:text-[rgba(255, 255, 255, 0.2)] w-7">
