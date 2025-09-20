@@ -1,9 +1,10 @@
 import React from 'react'
+import Home from '../Home'
 
 function Ecommerce() {
   return (
     <div>
-      s
+      <Home />
     </div>
   )
 }

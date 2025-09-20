@@ -7,7 +7,7 @@ import { PiChartPieSlice } from "react-icons/pi";
 
 export default function Sidebar({ collapsed = false, onSelect }) {
     const [openMenus, setOpenMenus] = useState({});
-    const [activeItem, setActiveItem] = useState("");
+    const [activeItem, setActiveItem] = useState("Default");
     const navigate = useNavigate();
     const toggleMenu = (title) => {
         setOpenMenus((prev) => ({ ...prev, [title]: !prev[title] }));
