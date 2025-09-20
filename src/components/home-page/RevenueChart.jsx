@@ -22,7 +22,7 @@ const data = [
 export default function RevenueChart() {
     
   return (
-    <div className="w-full h-[252px]  pb-10 pt-6 pr-7 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
+    <div className="w-full h-[318px]  pb-10 pt-6 pr-7 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
       
 
       {/* Custom Legend */}

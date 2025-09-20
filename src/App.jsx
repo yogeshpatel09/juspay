@@ -21,18 +21,18 @@ import Ecommerce from "./(pages)/dashboard/Ecommerce";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isAsideOpen, setIsAsideOpen] = useState(true);
+  const [isAsideOpen, setIsAsideOpen] = useState(false);
 
   const toggleSidebar = () => setIsSidebarOpen(s => !s);
   const toggleAside = () => setIsAsideOpen(s => !s);
   const [currentPageTitle, setCurrentPageTitle] = useState("Default");
   return (
     <Router>
-      <div className="flex w-full dark:bg-[#1c1c1c] min-h-screen">   
+      <div className="flex w-full dark:bg-[#1c1c1c] h-screen scrollbar-hide">   
         <div className={`flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${isSidebarOpen ? "w-[212px]" : "w-0"}`}>
           <Sidebar collapsed={!isSidebarOpen} onSelect={(title) => setCurrentPageTitle(title)}/>
         </div>
-        <div className="flex-1 overflow-y-auto w-full">
+        <div className="flex-1 overflow-y-auto scrollbar-hide w-full">
           <Header onToggleLeft={toggleSidebar} onToggleRight={toggleAside} />
           <Routes>
             <Route path="/" element={<Home />} />
