@@ -22,7 +22,7 @@ import OrdersPage from "./(pages)/Order-list";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isAsideOpen, setIsAsideOpen] = useState(false);
+  const [isAsideOpen, setIsAsideOpen] = useState(true);
 
   const toggleSidebar = () => setIsSidebarOpen(s => !s);
   const toggleAside = () => setIsAsideOpen(s => !s);
@@ -54,7 +54,7 @@ export default function App() {
             
           </Routes>
         </div>
-        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out h-screen sc overflow-y-auto scrollbar-hide ${isAsideOpen ? "w-[280px]" : "w-0"}`}>
+        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out h-screen overflow-y-auto scrollbar-hide ${isAsideOpen ? "w-[280px]" : "w-0"}`}>
           <Aside hidden={!isAsideOpen} />
         </div>
       </div>

@@ -64,7 +64,7 @@ export default function Sidebar({ collapsed = false, onSelect }) {
         );
     };
     return (
-        <div className={`w-full h-screen overflow-y-auto border-r border-gray-200 dark:border-gray-700 px-4 py-5 ovey scrollbar-hide
+        <div className={`w-full h-screen overflow-y-auto border-r border-gray-200 dark:border-[rgba(255,255,255,0.1)] px-4 py-5 ovey scrollbar-hide
   transition-opacity duration-200 ${collapsed ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
             <div className="mb-4 flex gap-2 p-1">
 

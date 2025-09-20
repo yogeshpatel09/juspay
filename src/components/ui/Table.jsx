@@ -49,7 +49,7 @@ const Table = ({ columns, data }) => {
     }
     return sortableData;
   }, [filteredData, sortConfig]);
-  
+
 
   // Pagination
   const paginatedData = useMemo(() => {
@@ -145,7 +145,7 @@ const Table = ({ columns, data }) => {
             {paginatedData.map((row, i) => (
               <tr
                 key={i}
-                className="border-b border-[rgba(28,28,28,0.05)] dark:border-[rgba(255,255,255,0.1)] text-[rgba(28,28,28,1)] dark:text-[rgba(255,255,255,1)] hover:bg-[rgba(247,249,251,1)] dark:hover:bg-[rgba(255,255,255,0.05)] group"
+                className="border-b border-[rgba(28,28,28,0.05)] dark:border-[rgba(255,255,255,0.1)] text-[rgba(28,28,28,1)] dark:text-[rgba(255,255,255,1)] hover:bg-[rgba(247,249,251,1)] dark:hover:bg-[rgba(255,255,255,0.05)] group text-xs"
               >
                 <td className="py-3 px-4">
                   <input
@@ -212,7 +212,10 @@ const Table = ({ columns, data }) => {
 
       {/* Pagination */}
       <div className="flex justify-end items-center mt-4 gap-2">
-        <button>
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          className="px-2 py-1"
+        >
           <FaAngleLeft className="dark:text-white cursor-pointer" />
         </button>
         {Array.from({ length: pageCount }, (_, i) => (
@@ -227,7 +230,10 @@ const Table = ({ columns, data }) => {
             {i + 1}
           </button>
         ))}
-        <button>
+        <button
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, pageCount))}
+          className="px-2 py-1"
+        >
           <FaAngleRight className="dark:text-white cursor-pointer" />
         </button>
       </div>
