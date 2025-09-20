@@ -13,11 +13,11 @@ import Profile from "./(pages)/page/Profile";
 import Social from "./(pages)/page/Social";
 import Blog from "./(pages)/page/Blog";
 import Documents from "./(pages)/page/profile/Documents";
-import Followers from "./(pages)/page/profile/followers";
+import Followers from "./(pages)/page/profile/Followers";
 import Overview from "./(pages)/page/profile/Overview";
 import ProjectProfile from "./(pages)/page/profile/Project";
 import Campaigns from "./(pages)/page/profile/Campaigns";
-import Ecommerce from "./(pages)/dashboard/ecommerce";
+import Ecommerce from "./(pages)/dashboard/Ecommerce";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
