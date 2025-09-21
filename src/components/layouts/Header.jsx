@@ -15,7 +15,7 @@ function Header({ onToggleLeft, onToggleRight, pageTitle }) {
 
                     <div onClick={() => onToggleLeft && onToggleLeft()} className='px-2 py-1 cursor-pointer'><MdOutlineViewSidebar /></div>
                     <div className='px-2 py-1 cursor-pointer'><FaRegStar /></div>
-                    <div className="flex cursor-pointer">
+                    <div className=" cursor-pointer hidden md:block">
                         <Breadcrumb />
                     </div>
 

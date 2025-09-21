@@ -29,7 +29,7 @@ export default function Sidebar({ collapsed = false, onSelect }) {
                                     if (item.path) navigate(item.path);
                                 }
                             }}
-                            className={`flex items-center gap-1 w-full text-sm text-[#1C1C1C] dark:border-[rgba(28,28,28,0.1)] px-2 py-1 rounded-lg ${activeItem === item.title
+                            className={`flex items-center gap-1 w-full cursor-pointer text-sm text-[#1C1C1C] dark:border-[rgba(28,28,28,0.1)] px-2 py-1 rounded-lg ${activeItem === item.title
                                 ? 'bg-[rgba(28,28,28,0.05)] dark:bg-[rgba(255,255,255,0.1)]'
                                 : 'hover:bg-[rgba(28,28,28,0.05)] hover:dark:bg-[rgba(255,255,255,0.1)]'
                                 }`}
