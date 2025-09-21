@@ -7,7 +7,7 @@ import { PiChartPieSlice } from "react-icons/pi";
 
 export default function Sidebar({ collapsed = false, onSelect }) {
     const [openMenus, setOpenMenus] = useState({});
-    const [activeItem, setActiveItem] = useState("Default");
+    const [activeItem, setActiveItem] = useState("/");
     const navigate = useNavigate();
     const toggleMenu = (title) => {
         setOpenMenus((prev) => ({ ...prev, [title]: !prev[title] }));
@@ -74,8 +74,8 @@ export default function Sidebar({ collapsed = false, onSelect }) {
             </div>
             <nav className="">
                 <div className="text-sm  mt-4 mb-2 flex gap-2 items-start">
-                    <span className="  text-[rgba(28,28,28,0.4)] dark:text-white cursor-pointer px-2 py-1">Favorites</span>
-                    <span className=" text-[rgba(28,28,28,0.2)] hover:text-[rgba(28,28,28,0.4)] dark:text-white cursor-pointer px-2 py-1">Recently</span>
+                    <span className="  text-[rgba(28,28,28,0.4)] dark:text-[rgba(255,255,255,0.4)] cursor-pointer px-2 py-1">Favorites</span>
+                    <span className=" text-[rgba(28,28,28,0.2)] dark:hover:text-[rgba(255,255,255,0.4)] dark:text-[rgba(255,255,255,0.2)]  hover:text-[rgba(28,28,28,0.4)]  cursor-pointer px-2 py-1">Recently</span>
                 </div>
                 <div className="space-y-1 px-2">
                     {sidebarData.favorites.map((item, i) => (

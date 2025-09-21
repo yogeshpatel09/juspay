@@ -12,7 +12,7 @@ export default function TopSellingProducts() {
   return (
     <div className="p-6 bg-[#F7F9FB] dark:bg-[rgba(255,255,255,0.05)]  rounded-2xl shadow">
       <h2 className="text-lg font-bold mb-4 text-[#1C1C1C] dark:text-white px-4">Top Selling Products</h2>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-hide">
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b text-[rgba(28,28,28,0.4)] dark:text-[rgba(255,255,255,0.4)] text-left">

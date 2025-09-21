@@ -6,7 +6,7 @@ import { AsideData } from "../../data/AsideData";
 export default function Aside({ hidden = false }) {
   return (
     <div
-      className={`w-full h-screen px-4 py-5 dark:border-[rgba(255,255,255,0.1)] border-l border-[rgba(28,28,28,0.1)] transition-opacity duration-200 ${
+      className={`w-full h-screen overflow-y-auto scrollbar-hide px-4 py-5 dark:border-[rgba(255,255,255,0.1)] border-l border-[rgba(28,28,28,0.1)] transition-opacity duration-200 ${
         hidden
           ? "opacity-0 pointer-events-none"
           : "opacity-100 pointer-events-auto"

@@ -26,10 +26,10 @@ export default function App() {
 
   const toggleSidebar = () => setIsSidebarOpen(s => !s);
   const toggleAside = () => setIsAsideOpen(s => !s);
-  const [currentPageTitle, setCurrentPageTitle] = useState("Default");
+  const [currentPageTitle, setCurrentPageTitle] = useState("");
   return (
     <Router>
-      <div className="flex w-full dark:bg-[#1c1c1c] h-screen overflow-y-hidden scrollbar-hide">   
+      <div className="flex w-full dark:bg-[#1c1c1c] h-screen overflow-hidden scrollbar-hide ">   
         <div className={`flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${isSidebarOpen ? "w-[212px]" : "w-0"}`}>
           <Sidebar collapsed={!isSidebarOpen} onSelect={(title) => setCurrentPageTitle(title)}/>
         </div>
@@ -46,7 +46,7 @@ export default function App() {
             <Route path="/page/corporate" element={<Corporate/>} />
             <Route path="/page/profile" element={<Profile/>} />
             <Route path="/page/social" element={<Social/>} />
-            <Route path="/profile/compaings" element={<Campaigns/>} />
+            <Route path="/profile/campaigns" element={<Campaigns/>} />
             <Route path="/profile/documents" element={<Documents/>} />
             <Route path="/profile/followers" element={<Followers/>} />
             <Route path="/profile/Overview" element={<Overview/>} />
@@ -54,7 +54,7 @@ export default function App() {
             
           </Routes>
         </div>
-        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out h-screen overflow-y-auto scrollbar-hide ${isAsideOpen ? "w-[280px]" : "w-0"}`}>
+        <div className={`flex-shrink-0 transition-all duration-300 ease-in-out  hidden lg:block ${isAsideOpen ? "w-[280px]" : "w-0"}`}>
           <Aside hidden={!isAsideOpen} />
         </div>
       </div>

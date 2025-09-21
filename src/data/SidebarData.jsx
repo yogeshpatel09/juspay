@@ -8,7 +8,7 @@ import { FaBookOpen } from "react-icons/fa";
 const sidebarData = {
   favorites: [
     { title: "Overview", path: "/" },
-    { title: "Projects", path: "/" },
+    { title: "Projects", path: "/profile/project" },
   ],
   dashboards: [
     {

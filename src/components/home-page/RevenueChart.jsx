@@ -22,11 +22,13 @@ const data = [
 export default function RevenueChart() {
 
   return (
-    <div className="w-full h-[318px]  pb-16 pt-6 pr-7 rounded-xl bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] shadow-sm">
+    <div className="w-full h-[318px] pb-6 pt-6 pr-7 rounded-xl 
+  bg-[rgba(247,249,251,1)] dark:bg-[rgba(255,255,255,0.05)] 
+  shadow-sm overflow-hidden">
 
 
       {/* Custom Legend */}
-      <div className="flex items-center gap-4 mb-2 pb-4 pl-7  text-sm">
+      <div className="flex items-center gap-4 mb-2 pb-4 pl-7  text-sm ">
         <h2 className="text-sm font-semibold dark:text-white">Revenue</h2>
         <span className="flex items-center gap-1 dark:text-white">
           <span className="w-2 h-2 rounded-full bg-[rgba(168,197,218,1)]"></span>
@@ -39,15 +41,24 @@ export default function RevenueChart() {
       </div>
 
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
+        <LineChart
+          data={data}
+          margin={{ top: 10, right: 20, left: 10, bottom: 50 }}
+        >
           <CartesianGrid vertical={false} stroke="#e5e5e5" />
 
-          <XAxis dataKey="name" axisLine={false} tickLine={false} />
+          <XAxis dataKey="name"
+            axisLine={false}
+            tickLine={false}
+            tickMargin={20}
+            padding={{ left: 10, right: 20 }}
+          />
           <YAxis
             ticks={[0, 10, 20, 30]}
             domain={[0, 30]}
             axisLine={false}
             tickLine={false}
+            tickMargin={10}
             tickFormatter={(val) => `${val}M`}
           />
 

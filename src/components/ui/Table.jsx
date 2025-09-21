@@ -119,7 +119,7 @@ const Table = ({ columns, data }) => {
 
       {/* Table Scrollable */}
       <div className="flex-1 overflow-y-auto scrollbar-hide">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full text-left border-collapse min-w-[850px]">
           <thead className="sticky z-20 top-0 bg-white dark:bg-[#1c1c1c] dark:text-[rgba(255,255,255,0.4)] text-[rgba(28,28,28,0.4)] dark:border-[rgba(255,255,255,0.2)] border-[rgba(28,28,28,0.2)] border-b">
             <tr>
               <td className="py-3 px-4">
